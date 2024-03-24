@@ -1,7 +1,66 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
 body {
-    background-image: url(spiral-clock-the-flow-of-time-dark-blue-turquoise-royalty-free-image-1699913386.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+  height: 100%;
+}
+
+body {
+  background-image: url(spiral-clock-the-flow-of-time-dark-blue-turquoise-royalty-free-image-1699913386.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: rgba(7, 94, 118, 0.461);
+  width: 10em;
+  height: 20vh;
+  font-size: 50px;
+  backdrop-filter: blur(3px); /* blur */
+  transition: width 0.5s; /* Smooth transition for width */
+  border-radius: 15px;
+  color: rgb(196, 232, 239);
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.clock span {
+  position: relative;
+}
+
+.clock span::after {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  font-size: 15px;
+  transform: translateX(-50%);
+}
+
+#hour::after {
+  content: "HOURS";
+}
+#min::after {
+  content: "MINS";
+}
+#sec::after {
+  content: "SEC";
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 7em;
+  }
 }
